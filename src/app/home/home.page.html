@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary" >
+    <ion-title>
+      TicTacToe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding masters" [fullscreen]="true">
+  <div class="but">
+    <h1 class="ngjyra">Current Player: {{ player }} </h1>
+  </div>
+
+  <div class="but">
+    <ion-button class="ngjyra" fill="outline" color="warning" (click)="newGame()">Start new Game</ion-button>
+  </div>
+
+<div class="but">
+  <h2 class="ngjyra" *ngIf="winner">Player {{ winner }} won the game!</h2>
+</div>
+  
+  
+  <div class="but">
+    <main>
+      <app-square  *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+      </app-square>
+    </main>
+  </div>
+</ion-content>
